@@ -6,16 +6,16 @@ namespace API
 {
     public class GenerateTerrain
     {
-        public void CalculateIndices(out int[] indices, int xSquares, int zSqaures, out Vector3[] normals, Vector3[] coords)
+        public void CalculateIndices(out int[] indices, int xSquares, int zSquares, out Vector3[] normals, Vector3[] coords)
         {
-            int totalSquares = xSquares * zSqaures;
+            int totalSquares = xSquares * zSquares;
             indices = new int[totalSquares * 6];
-            int totalVertices = (xSquares + 1) * (zSqaures + 1);
+            int totalVertices = (xSquares + 1) * (zSquares + 1);
             normals = new Vector3[totalVertices];
             int xVertices = xSquares + 1;
             int index = 0;
             int rowCounter = 0;
-            for (int i = 0; i < (totalSquares + zSqaures); i++)
+            for (int i = 0; i < (totalSquares + xSquares); i++)
             {
                 if (rowCounter == xSquares)
                 {
